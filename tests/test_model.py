@@ -72,7 +72,5 @@ def test_num_params_positive(small_model):
 
 
 def test_embedding_tied_with_lm_head(small_model):
-    """输入嵌入与输出投影共享权重，参数量应少于两份独立矩阵。"""
-    n_embd = small_model.config.n_embd
-    vocab = small_model.config.vocab_size
-    assert small_model.num_params() < 2 * n_embd * vocab
+    """输入嵌入与输出投影共享同一份权重张量。"""
+    assert small_model.tok_emb.weight.data_ptr() == small_model.lm_head.weight.data_ptr()
