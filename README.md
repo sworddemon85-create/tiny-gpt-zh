@@ -94,7 +94,7 @@ tiny-gpt-zh/
 ├── scripts/
 │   ├── train.py          # 训练入口（CPU 可跑）
 │   └── sample.py         # 文本生成
-├── data/corpus.txt       # 示例中文语料（约 5000 字）
+├── data/corpus.txt       # 示例中文语料（约 2500 字，原创短文）
 ├── tests/                # 单元测试 + 冒烟训练测试
 └── .github/workflows/    # CI：安装 CPU 版 torch 并跑全部测试
 ```
@@ -111,7 +111,7 @@ python scripts/train.py --data 你的语料.txt --n-layer 6 --n-embd 256 --max-i
 
 ## ⚠️ 预期效果说明
 
-这是一个**教学项目**：默认配置下模型只有约 90 万参数、语料约 5000 字，
+这是一个**教学项目**：默认配置下模型只有约 90 万参数、语料约 2500 字，
 生成的文本会呈现出语料的句式和常用词，但不会通顺到"像人写的"。
 它的价值在于把训练大模型的每一步都跑通、看懂。想要质变，请加大语料和参数量，
 或参考 [nanoGPT](https://github.com/karpathy/nanoGPT) 做更大规模的训练。
