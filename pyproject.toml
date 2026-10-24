@@ -1,0 +1,4 @@
+[tool.pytest.ini_options]
+# 让测试可以从仓库根目录导入 tiny_gpt 包
+pythonpath = ["."]
+testpaths = ["tests"]
